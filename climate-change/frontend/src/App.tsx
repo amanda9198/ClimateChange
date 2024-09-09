@@ -1,5 +1,5 @@
 import React from 'react';
-import Visualizer from './components/Visualizer';
+import Visualizer from './app/dashboard/page';
 
 interface ProjectResult {
   iteration: number;
@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="App">
       <h1 className='text-3xl font-bold mb-4'>Project Visualizer</h1>
-      <Visualizer data={projectData} />
+      <Visualizer projectData={projectData} />
     </div>
   );
 }

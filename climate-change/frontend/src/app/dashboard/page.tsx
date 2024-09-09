@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const Visualizer = ({ data }) => {
+const Visualizer = ({ projectData }) => {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">NGINX Access Log Dashboard</h1>
@@ -13,7 +13,7 @@ const Visualizer = ({ data }) => {
           </CardHeader>
           <CardContent>
             <ResponsiveContainer width="100%" height={200}>
-              <BarChart data={data.documentCount}>
+              <BarChart data={projectData.documentCount}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="date" />
                 <YAxis />
@@ -30,12 +30,12 @@ const Visualizer = ({ data }) => {
           </CardHeader>
           <CardContent>
             <div className="flex justify-between mb-2">
-              <span>min: {data.bodyBytes.min}</span>
-              <span>median: {data.bodyBytes.median}</span>
-              <span>max: {data.bodyBytes.max}</span>
+              <span>min: {projectData.bodyBytes.min}</span>
+              <span>median: {projectData.bodyBytes.median}</span>
+              <span>max: {projectData.bodyBytes.max}</span>
             </div>
             <ResponsiveContainer width="100%" height={150}>
-              <BarChart data={data.bodyBytes.distribution}>
+              <BarChart data={projectData.bodyBytes.distribution}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="range" />
                 <YAxis />
